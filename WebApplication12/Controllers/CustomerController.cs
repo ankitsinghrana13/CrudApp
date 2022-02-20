@@ -18,8 +18,36 @@ namespace WebApplication12.Controllers
             List<Location> locations = dbContext.Locations.ToList();
             return View(locations);
         }
+        public IActionResult CustomerList(int id)
+        {
+            var cust = dbContext.Customers.Where(e => e.Location.Id==id);
+            return View(cust);
+        }
+
+        public IActionResult ShowCustomer()
+        {
+            List<Customer>Customers=dbContext.Customers.ToList();
+            return View(Customers);
+        }
+
+        [HttpGet]
+        public IActionResult Create()
+        {
+
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult Create(Customer Cust)
+        {
+            dbContext.Customers.Add(Cust);
+            dbContext.SaveChanges();
+            return RedirectToAction("ShowCustomer");
+        }
 
       
-        }
+
+
     }
+}
 

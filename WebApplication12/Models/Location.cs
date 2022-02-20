@@ -8,7 +8,7 @@ namespace WebApplication12.Models
     public class Location
     {
         public int Id { get; set; }
-        public String Place { get; set; }
+        public string Place { get; set; }
         public string Detail { get; set; }
     }
 }
