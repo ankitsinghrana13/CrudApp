@@ -14,5 +14,6 @@ namespace WebApplication12.Models
         public string Name { get; set; }
         public string Mobile { get; set; }
         public Location Location { get; set; }
+        public int MyProperty { get; set; }
     }
 }
